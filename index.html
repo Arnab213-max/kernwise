@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kernwise — Kill the busywork</title>
+  <meta name="description" content="Kernwise automates repetitive workflows for small teams. Route tasks, generate reports, and reclaim your week." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="Kernwise home">
+        <span class="brand-glyph" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+            <rect width="26" height="26" rx="7" fill="#22C55E"/>
+            <path d="M7 19V7h2.8l4.4 6.6V7H17v12h-2.8l-4.4-6.6V19H7z" fill="#050505"/>
+          </svg>
+        </span>
+        <span class="brand-name">Kernwise</span>
+      </a>
+
+      <nav class="desk-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#features" class="nav-anchor">Features</a></li>
+          <li><a href="#how" class="nav-anchor">How it works</a></li>
+          <li><a href="#pricing" class="nav-anchor">Pricing</a></li>
+          <li><a href="#faq" class="nav-anchor">FAQ</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="user-slot" id="userSlot">
+            <a href="signin.html" class="nav-anchor">Sign in</a>
+            <a href="signup.html" class="btn btn-solid btn-small">Get started</a>
+          </div>
+          <div class="user-badge hidden" id="userBadge">
+            <span class="user-dot" aria-hidden="true"></span>
+            <span class="user-email" id="userEmail"></span>
+            <button type="button" class="user-signout" id="signOutBtn">Sign out</button>
+          </div>
+        </div>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul class="mobile-list">
+        <li><a href="#features" class="mobile-anchor">Features</a></li>
+        <li><a href="#how" class="mobile-anchor">How it works</a></li>
+        <li><a href="#pricing" class="mobile-anchor">Pricing</a></li>
+        <li><a href="#faq" class="mobile-anchor">FAQ</a></li>
+        <li><a href="#contact" class="mobile-anchor">Contact</a></li>
+        <li><a href="signin.html" class="mobile-anchor">Sign in</a></li>
+      </ul>
+      <a href="signup.html" class="btn btn-solid mobile-try">Get started</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="hero-aura" aria-hidden="true"></div>
+      <div class="container hero-split">
+        <div class="hero-copy">
+          <span class="pill"><span class="pill-dot" aria-hidden="true"></span> Automate. Ship. Repeat.</span>
+          <h1 class="hero-title">
+            Kill the busywork.<br />
+            <em>Keep the good work.</em>
+          </h1>
+          <p class="hero-lede">
+            Kernwise automates the repetitive stuff — approvals, updates, handoffs, reports —
+            so your team can spend its hours on work that actually ships.
+          </p>
+          <div class="hero-buttons">
+            <a href="signup.html" class="btn btn-solid btn-big">Start free trial</a>
+            <a href="#features" class="btn btn-ghost btn-big">See features</a>
+          </div>
+          <p class="hero-trust">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            Trusted by 9,200+ operators, managers and founders
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="Kernwise dashboard preview">
+          <div class="app-frame">
+            <div class="app-bar">
+              <span class="traffic light-r"></span>
+              <span class="traffic light-y"></span>
+              <span class="traffic light-g"></span>
+              <span class="app-bar-title">Kernwise · Today</span>
+            </div>
+            <div class="app-body">
+              <aside class="app-rail" aria-hidden="true">
+                <span class="rail-item on"></span>
+                <span class="rail-item"></span>
+                <span class="rail-item"></span>
+                <span class="rail-item"></span>
+              </aside>
+              <div class="app-canvas">
+                <div class="kpi-row">
+                  <div class="kpi">
+                    <span class="kpi-label">Automations run</span>
+                    <span class="kpi-num">1,412</span>
+                    <span class="kpi-trend">+14%</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="kpi-label">Hours reclaimed</span>
+                    <span class="kpi-num">36.5</span>
+                    <span class="kpi-trend">+9%</span>
+                  </div>
+                  <div class="kpi">
+                    <span class="kpi-label">On-time rate</span>
+                    <span class="kpi-num">96%</span>
+                    <span class="kpi-trend">+2%</span>
+                  </div>
+                </div>
+                <div class="chart-block">
+                  <div class="chart-cols" aria-hidden="true">
+                    <div class="col" style="--bar: 52%"></div>
+                    <div class="col" style="--bar: 74%"></div>
+                    <div class="col" style="--bar: 43%"></div>
+                    <div class="col" style="--bar: 88%"></div>
+                    <div class="col" style="--bar: 67%"></div>
+                    <div class="col" style="--bar: 82%"></div>
+                    <div class="col" style="--bar: 58%"></div>
+                  </div>
+                  <div class="chart-days" aria-hidden="true">
+                    <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+                  </div>
+                </div>
+                <div class="task-block">
+                  <div class="task-line">
+                    <span class="task-tick on" aria-hidden="true">✓</span>
+                    <span class="task-name">Send onboarding sequence</span>
+                    <span class="task-pill auto">auto</span>
+                  </div>
+                  <div class="task-line">
+                    <span class="task-tick on" aria-hidden="true">✓</span>
+                    <span class="task-name">Compile weekly ops report</span>
+                    <span class="task-pill auto">auto</span>
+                  </div>
+                  <div class="task-line">
+                    <span class="task-tick" aria-hidden="true"></span>
+                    <span class="task-name">Review vendor contract</span>
+                    <span class="task-pill human">manual</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="container">
+        <p class="proof-line">Keeping the lights on at</p>
+        <div class="logo-row" aria-label="Customer logos">
+          <span class="fake-logo">Halcyon</span>
+          <span class="fake-logo">Northbeam</span>
+          <span class="fake-logo">Trellis</span>
+          <span class="fake-logo">Foxglove</span>
+          <span class="fake-logo">Meridian</span>
+          <span class="fake-logo">Cobalt</span>
+          <span class="fake-logo">Wavelength</span>
+          <span class="fake-logo">Sable</span>
+          <span class="fake-logo">Ionic</span>
+        </div>
+        <div class="metric-row">
+          <div class="metric">
+            <span class="metric-num">9,200+</span>
+            <span class="metric-cap">Teams onboard</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">2.1M</span>
+            <span class="metric-cap">Tasks automated</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num">160k</span>
+            <span class="metric-cap">Hours saved / month</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="head-block">
+          <span class="kicker">What you get</span>
+          <h2 class="head-title">Everything you'd build yourself — <em>if you had the time.</em></h2>
+          <p class="head-sub">Six things Kernwise does out of the box, so you don't have to stitch together five tools.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feat">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            </span>
+            <h3>Automation rules</h3>
+            <p>Chain actions together with simple "when X happens, do Y" rules. No scripting required.</p>
+          </article>
+          <article class="feat">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12l3 3 5-6"/></svg>
+            </span>
+            <h3>Task queues that sort themselves</h3>
+            <p>Queues reorder based on deadlines, blockers and who's available. No more manual triage.</p>
+          </article>
+          <article class="feat">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 20V10M9 20V4M15 20v-7M21 20V7"/></svg>
+            </span>
+            <h3>Dashboards that update live</h3>
+            <p>See throughput, bottlenecks and time saved the moment they change — not a week later.</p>
+          </article>
+          <article class="feat">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M15 20c0-2 1.2-3.5 3-3.5s3 1.5 3 3.5"/></svg>
+            </span>
+            <h3>Shared workspaces</h3>
+            <p>Comments, mentions and handoffs live right next to the task — no more Slack archaeology.</p>
+          </article>
+          <article class="feat">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            </span>
+            <h3>Smart scheduling</h3>
+            <p>Kernwise finds focus blocks that actually stick, based on how your team really works.</p>
+          </article>
+          <article class="feat">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3>Security you don't have to bolt on</h3>
+            <p>SSO, role-based access and encryption are part of the plan — not a paid add-on.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="container">
+        <div class="head-block">
+          <span class="kicker">The process</span>
+          <h2 class="head-title">Three steps. <em>That's it.</em></h2>
+          <p class="head-sub">Most teams are live in an afternoon. Seriously.</p>
+        </div>
+        <div class="step-track">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Plug in your tools</h3>
+            <p>Connect Slack, Google Workspace, Notion, Jira or whatever you already use. Takes about four minutes.</p>
+            <span class="step-wire" aria-hidden="true"></span>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>Point Kernwise at the busywork</h3>
+            <p>Pick the repetitive tasks you want off your plate. Kernwise handles the rest in the background.</p>
+            <span class="step-wire" aria-hidden="true"></span>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Watch the hours come back</h3>
+            <p>Your dashboard updates with every hour saved. Most teams find the time to ship more, not less.</p>
+          </div>
+        </div>
+        <div class="how-cta">
+          <a href="#pricing" class="btn btn-solid">Try it on your team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview" id="preview">
+      <div class="container">
+        <div class="head-block">
+          <span class="kicker">Look around</span>
+          <h2 class="head-title">The dashboard, <em>for real this time.</em></h2>
+          <p class="head-sub">Click the tabs. It's interactive.</p>
+        </div>
+
+        <div class="panel-shell">
+          <div class="panel-top">
+            <div class="panel-dots" aria-hidden="true">
+              <span class="traffic light-r"></span><span class="traffic light-y"></span><span class="traffic light-g"></span>
+            </div>
+            <div class="panel-tabs" role="tablist" aria-label="Dashboard sections">
+              <button class="ptab active" role="tab" aria-selected="true" aria-controls="pane-overview" id="ptab-overview" data-pane="overview">Overview</button>
+              <button class="ptab" role="tab" aria-selected="false" aria-controls="pane-tasks" id="ptab-tasks" data-pane="tasks">Tasks</button>
+              <button class="ptab" role="tab" aria-selected="false" aria-controls="pane-insights" id="ptab-insights" data-pane="insights">Insights</button>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="pane active" id="pane-overview" role="tabpanel" aria-labelledby="ptab-overview">
+              <div class="pane-metrics">
+                <div class="pm">
+                  <span class="pm-label">Automations run</span>
+                  <span class="pm-num">1,284</span>
+                  <div class="meter"><div class="meter-fill" style="--fill: 78%"></div></div>
+                </div>
+                <div class="pm">
+                  <span class="pm-label">Weekly goal</span>
+                  <span class="pm-num">92%</span>
+                  <div class="meter"><div class="meter-fill" style="--fill: 92%"></div></div>
+                </div>
+                <div class="pm">
+                  <span class="pm-label">Team capacity</span>
+                  <span class="pm-num">68%</span>
+                  <div class="meter"><div class="meter-fill" style="--fill: 68%"></div></div>
+                </div>
+              </div>
+              <div class="pane-feed">
+                <h4 class="pane-sub">Recent activity</h4>
+                <ul class="feed-list">
+                  <li><span class="feed-dot green"></span> Weekly ops report generated <span class="feed-time">2m</span></li>
+                  <li><span class="feed-dot red"></span> Sprint review scheduled <span class="feed-time">18m</span></li>
+                  <li><span class="feed-dot green"></span> 14 completed tasks archived <span class="feed-time">1h</span></li>
+                  <li><span class="feed-dot green"></span> Onboarding emails sent to 5 leads <span class="feed-time">3h</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pane" id="pane-tasks" role="tabpanel" aria-labelledby="ptab-tasks">
+              <h4 class="pane-sub">Your queue</h4>
+              <ul class="queue">
+                <li class="q-row done">
+                  <span class="q-tick">✓</span>
+                  <span class="q-name">Finalise Q3 campaign brief</span>
+                  <span class="q-tag auto">auto</span>
+                </li>
+                <li class="q-row done">
+                  <span class="q-tick">✓</span>
+                  <span class="q-name">Sync CRM with new leads</span>
+                  <span class="q-tag auto">auto</span>
+                </li>
+                <li class="q-row">
+                  <span class="q-tick"></span>
+                  <span class="q-name">Review mobile design handoff</span>
+                  <span class="q-tag human">manual</span>
+                </li>
+                <li class="q-row">
+                  <span class="q-tick"></span>
+                  <span class="q-name">Approve marketing budget request</span>
+                  <span class="q-tag human">manual</span>
+                </li>
+                <li class="q-row">
+                  <span class="q-tick"></span>
+                  <span class="q-name">Prepare investor update deck</span>
+                  <span class="q-tag auto">auto</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pane" id="pane-insights" role="tabpanel" aria-labelledby="ptab-insights">
+              <h4 class="pane-sub">Productivity trend</h4>
+              <div class="insight-chart" aria-hidden="true">
+                <div class="insight-col" style="--h: 40%"><span>Mo</span></div>
+                <div class="insight-col" style="--h: 65%"><span>Tu</span></div>
+                <div class="insight-col" style="--h: 52%"><span>We</span></div>
+                <div class="insight-col" style="--h: 88%"><span>Th</span></div>
+                <div class="insight-col" style="--h: 74%"><span>Fr</span></div>
+                <div class="insight-col" style="--h: 96%"><span>Sa</span></div>
+                <div class="insight-col" style="--h: 61%"><span>Su</span></div>
+              </div>
+              <div class="insight-foot">
+                <span>Avg. focus time: <strong>5h 12m</strong></span>
+                <span>Tasks completed: <strong>47</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="head-block">
+          <span class="kicker">Pricing</span>
+          <h2 class="head-title">Simple plans. <em>Fair prices.</em></h2>
+          <p class="head-sub">Start free. Upgrade when it pays for itself.</p>
+        </div>
+
+        <div class="bill-toggle-wrap">
+          <span class="bill-label on" id="billMonthly">Monthly</span>
+          <button class="switch" id="billSwitch" role="switch" aria-checked="false" aria-label="Switch to yearly billing">
+            <span class="switch-dot"></span>
+          </button>
+          <span class="bill-label" id="billYearly">Yearly <span class="save-chip">-20%</span></span>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card" data-plan="Starter">
+            <h3 class="plan-name">Starter</h3>
+            <p class="plan-blurb">For solo operators testing the water.</p>
+            <div class="plan-cost">
+              <span class="cost-num" data-mo="Free" data-yr="Free">Free</span>
+              <span class="cost-per" data-mo="" data-yr=""></span>
+            </div>
+            <ul class="plan-list">
+              <li>Basic task management</li>
+              <li>Limited automation rules</li>
+              <li>Personal dashboard</li>
+              <li>Community support</li>
+            </ul>
+            <a class="btn btn-outline plan-btn" data-plan-cta="Starter" href="checkout.html">Get started free</a>
+          </article>
+
+          <article class="price-card featured" data-plan="Pro">
+            <span class="pop-flag">Most popular</span>
+            <h3 class="plan-name">Pro</h3>
+            <p class="plan-blurb">For people who want their evenings back.</p>
+            <div class="plan-cost">
+              <span class="cost-num" data-mo="$19" data-yr="$15">$19</span>
+              <span class="cost-per" data-mo="/mo" data-yr="/mo billed yearly">/mo</span>
+            </div>
+            <ul class="plan-list">
+              <li>Unlimited projects</li>
+              <li>Advanced automation</li>
+              <li>Analytics dashboard</li>
+              <li>Priority support</li>
+            </ul>
+            <a class="btn btn-solid plan-btn" data-plan-cta="Pro" href="checkout.html">Start free trial</a>
+          </article>
+
+          <article class="price-card" data-plan="Team">
+            <h3 class="plan-name">Team</h3>
+            <p class="plan-blurb">For teams that work in the same lane.</p>
+            <div class="plan-cost">
+              <span class="cost-num" data-mo="$49" data-yr="$39">$49</span>
+              <span class="cost-per" data-mo="/mo" data-yr="/mo billed yearly">/mo</span>
+            </div>
+            <ul class="plan-list">
+              <li>Team collaboration</li>
+              <li>Shared workspaces</li>
+              <li>Advanced reporting</li>
+              <li>Premium support</li>
+            </ul>
+            <a class="btn btn-outline plan-btn" data-plan-cta="Team" href="checkout.html">Choose Team</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quotes" id="quotes">
+      <div class="container">
+        <div class="head-block">
+          <span class="kicker">What people say</span>
+          <h2 class="head-title">A few words from <em>the field.</em></h2>
+        </div>
+        <div class="quote-grid">
+          <blockquote class="quote-card">
+            <p class="quote-text">"Kernwise quietly took about six hours of admin off my week. I genuinely forgot what a clean inbox felt like."</p>
+            <footer class="quote-by">
+              <img class="quote-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces" alt="Ava Reynolds" loading="lazy" width="40" height="40" />
+              <div>
+                <cite class="quote-name">Ava Reynolds</cite>
+                <span class="quote-role">Ops lead, Halcyon</span>
+              </div>
+            </footer>
+          </blockquote>
+          <blockquote class="quote-card">
+            <p class="quote-text">"The analytics alone paid for the plan. We spotted a bottleneck in our sprint flow two days after switching."</p>
+            <footer class="quote-by">
+              <img class="quote-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces" alt="Marcus Kim" loading="lazy" width="40" height="40" />
+              <div>
+                <cite class="quote-name">Marcus Kim</cite>
+                <span class="quote-role">Engineering manager, Northbeam</span>
+              </div>
+            </footer>
+          </blockquote>
+          <blockquote class="quote-card">
+            <p class="quote-text">"Onboarding took ten minutes. Whole team was automating follow-ups the same afternoon. That's how it should be."</p>
+            <footer class="quote-by">
+              <img class="quote-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=faces" alt="Sofia Patel" loading="lazy" width="40" height="40" />
+              <div>
+                <cite class="quote-name">Sofia Patel</cite>
+                <span class="quote-role">Founder, Trellis Studio</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="head-block">
+          <span class="kicker">FAQ</span>
+          <h2 class="head-title">The stuff people <em>actually ask.</em></h2>
+        </div>
+        <div class="faq-stack" id="faqStack">
+          <div class="faq-row">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="ans-1" id="q-1">
+              <span>What kind of tasks can Kernwise automate?</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" id="ans-1" role="region" aria-labelledby="q-1">
+              <p>Anything that repeats: status updates, report generation, task routing, follow-up emails, meeting scheduling. If you can describe the rule, Kernwise can probably run it.</p>
+            </div>
+          </div>
+          <div class="faq-row">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="ans-2" id="q-2">
+              <span>Is there a free trial?</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" id="ans-2" role="region" aria-labelledby="q-2">
+              <p>Yes — Pro comes with a 14-day trial, no credit card required. Starter is free forever for individuals.</p>
+            </div>
+          </div>
+          <div class="faq-row">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="ans-3" id="q-3">
+              <span>How do you handle my data?</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" id="ans-3" role="region" aria-labelledby="q-3">
+              <p>Everything is encrypted at rest and in transit. We support SSO, role-based permissions, and follow SOC 2-aligned practices. Your data is yours — export or delete it any time.</p>
+            </div>
+          </div>
+          <div class="faq-row">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="ans-4" id="q-4">
+              <span>Can I switch plans later?</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" id="ans-4" role="region" aria-labelledby="q-4">
+              <p>Any time. Upgrade, downgrade or cancel from your account settings — changes apply at the next billing cycle.</p>
+            </div>
+          </div>
+          <div class="faq-row">
+            <button class="faq-trigger" aria-expanded="false" aria-controls="ans-5" id="q-5">
+              <span>What tools does it connect to?</span>
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" id="ans-5" role="region" aria-labelledby="q-5">
+              <p>Slack, Google Workspace, Notion, Jira, Trello, Asana, and more. There's a public API for anything custom.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="kicker">Talk to us</span>
+          <h2 class="head-title">Got a question? <em>Write to us.</em></h2>
+          <p class="head-sub">We reply to every message within one business day. Tell us what you're trying to automate.</p>
+          <ul class="contact-points">
+            <li><span class="point-dot" aria-hidden="true"></span> Book a 15-minute walkthrough</li>
+            <li><span class="point-dot" aria-hidden="true"></span> Ask about team pricing</li>
+            <li><span class="point-dot" aria-hidden="true"></span> Report a bug or ask for a feature</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Jane Smith" />
+            <span class="field-error" data-error-for="cf-name"></span>
+          </div>
+          <div class="field">
+            <label for="cf-email">Work email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+            <span class="field-error" data-error-for="cf-email"></span>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" required minlength="10" placeholder="What are you trying to automate?"></textarea>
+            <span class="field-error" data-error-for="cf-message"></span>
+          </div>
+          <button type="submit" class="btn btn-solid contact-submit">Send message</button>
+          <p class="form-note" id="contactNote" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="final" id="final">
+      <div class="container final-inner">
+        <h2 class="final-title">Ready to stop<br />babysitting workflows?</h2>
+        <p class="final-text">Join thousands of operators already saving hours every week with Kernwise.</p>
+        <a href="signup.html" class="btn btn-solid btn-big">Get started free</a>
+        <p class="final-note">No credit card · 14-day trial · Cancel anytime</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand" aria-label="Kernwise home">
+          <span class="brand-glyph" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
+              <rect width="26" height="26" rx="7" fill="#22C55E"/>
+              <path d="M7 19V7h2.8l4.4 6.6V7H17v12h-2.8l-4.4-6.6V19H7z" fill="#050505"/>
+            </svg>
+          </span>
+          <span class="brand-name">Kernwise</span>
+        </a>
+        <p class="foot-blurb">Workflow automation for small teams. Automate the boring parts, keep the good parts.</p>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <label for="nl-email" class="newsletter-label">Get one useful automation tip per month</label>
+          <div class="newsletter-row">
+            <input id="nl-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email" />
+            <button type="submit" class="btn btn-solid btn-small">Subscribe</button>
+          </div>
+          <p class="form-note" id="newsletterNote" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#quotes">Customers</a></li>
+          <li><a href="#final">Get started</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="signin.html">Sign in</a></li>
+          <li><a href="signup.html">Create account</a></li>
+          <li><a href="#contact">Get help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container foot-bottom">
+      <p class="foot-copy">© 2026 Kernwise. All rights reserved.</p>
+      <a href="#top" class="foot-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

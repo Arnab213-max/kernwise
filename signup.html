@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create account — Kernwise</title>
+  <meta name="theme-color" content="#050505" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-body">
+
+  <header class="auth-header">
+    <a href="index.html" class="brand" aria-label="Kernwise home">
+      <span class="brand-glyph" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect width="26" height="26" rx="7" fill="#22C55E"/>
+          <path d="M7 19V7h2.8l4.4 6.6V7H17v12h-2.8l-4.4-6.6V19H7z" fill="#050505"/>
+        </svg>
+      </span>
+      <span class="brand-name">Kernwise</span>
+    </a>
+    <a href="signin.html" class="auth-header-link">Already have an account? Sign in →</a>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-sub">Start free. No credit card required.</p>
+
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <label for="su-name">Full name</label>
+          <input id="su-name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Jane Smith" />
+          <span class="field-error" data-error-for="su-name"></span>
+        </div>
+        <div class="field">
+          <label for="su-email">Email</label>
+          <input id="su-email" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+          <span class="field-error" data-error-for="su-email"></span>
+        </div>
+        <div class="field">
+          <label for="su-password">Password</label>
+          <input id="su-password" name="password" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters" />
+          <span class="field-error" data-error-for="su-password"></span>
+        </div>
+        <button type="submit" class="btn btn-solid auth-submit">Create account</button>
+        <p class="form-note" id="signupNote" aria-live="polite"></p>
+      </form>
+
+      <p class="auth-alt">Already have an account? <a href="signin.html" class="link-btn">Sign in</a></p>
+    </div>
+  </main>
+
+  <footer class="auth-footer">
+    <p>© 2026 Kernwise · Demo</p>
+    <a href="index.html">← Back to home</a>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

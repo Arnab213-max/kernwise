@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Kernwise</title>
+  <meta name="theme-color" content="#050505" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-body">
+
+  <header class="auth-header">
+    <a href="index.html" class="brand" aria-label="Kernwise home">
+      <span class="brand-glyph" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect width="26" height="26" rx="7" fill="#22C55E"/>
+          <path d="M7 19V7h2.8l4.4 6.6V7H17v12h-2.8l-4.4-6.6V19H7z" fill="#050505"/>
+        </svg>
+      </span>
+      <span class="brand-name">Kernwise</span>
+    </a>
+    <a href="index.html#pricing" class="auth-header-link">← Change plan</a>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card auth-card-wide">
+      <h1 class="auth-title">Confirm your plan</h1>
+      <p class="auth-sub" id="checkoutSub">Review and activate your subscription.</p>
+
+      <div class="checkout-summary">
+        <div class="checkout-row">
+          <span>Plan</span>
+          <strong id="checkoutPlan">—</strong>
+        </div>
+        <div class="checkout-row">
+          <span>Billing</span>
+          <strong id="checkoutBilling">—</strong>
+        </div>
+        <div class="checkout-row">
+          <span>Account</span>
+          <strong id="checkoutAccount">—</strong>
+        </div>
+        <div class="checkout-row checkout-total">
+          <span>Total due today</span>
+          <strong id="checkoutPrice">—</strong>
+        </div>
+      </div>
+
+      <div id="checkoutNeedSignin" class="hidden">
+        <p class="checkout-prompt">You need to be signed in to activate this plan.</p>
+        <div class="checkout-actions">
+          <a href="signin.html?redirect=checkout" class="btn btn-solid">Sign in</a>
+          <a href="signup.html?redirect=checkout" class="btn btn-outline">Create account</a>
+        </div>
+      </div>
+
+      <div id="checkoutConfirm" class="hidden">
+        <button type="button" class="btn btn-solid auth-submit" id="confirmCheckout">Confirm & activate</button>
+      </div>
+
+      <p class="form-note" id="checkoutNote" aria-live="polite"></p>
+      <p class="checkout-fine">Demo checkout — no real charge is made. Your plan is stored in this browser.</p>
+    </div>
+  </main>
+
+  <footer class="auth-footer">
+    <p>© 2026 Kernwise · Demo</p>
+    <a href="index.html">← Back to home</a>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

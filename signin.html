@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — Kernwise</title>
+  <meta name="theme-color" content="#050505" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body class="auth-body">
+
+  <header class="auth-header">
+    <a href="index.html" class="brand" aria-label="Kernwise home">
+      <span class="brand-glyph" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <rect width="26" height="26" rx="7" fill="#22C55E"/>
+          <path d="M7 19V7h2.8l4.4 6.6V7H17v12h-2.8l-4.4-6.6V19H7z" fill="#050505"/>
+        </svg>
+      </span>
+      <span class="brand-name">Kernwise</span>
+    </a>
+    <a href="signup.html" class="auth-header-link">No account? Create one →</a>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <h1 class="auth-title">Welcome back</h1>
+      <p class="auth-sub">Sign in to your Kernwise account.</p>
+
+      <form id="signinForm" novalidate>
+        <div class="field">
+          <label for="si-email">Email</label>
+          <input id="si-email" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+          <span class="field-error" data-error-for="si-email"></span>
+        </div>
+        <div class="field">
+          <label for="si-password">Password</label>
+          <input id="si-password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="Your password" />
+          <span class="field-error" data-error-for="si-password"></span>
+        </div>
+        <button type="submit" class="btn btn-solid auth-submit">Sign in</button>
+        <p class="form-note" id="signinNote" aria-live="polite"></p>
+      </form>
+
+      <div class="demo-hint">
+        <p class="demo-hint-title">Just testing? Try the demo account.</p>
+        <button type="button" class="btn btn-outline demo-fill" id="useDemoAccount">Use demo account</button>
+        <p class="demo-hint-sub">demo@kernwise.app · password: demo1234</p>
+      </div>
+
+      <p class="auth-alt">New to Kernwise? <a href="signup.html" class="link-btn">Create an account</a></p>
+    </div>
+  </main>
+
+  <footer class="auth-footer">
+    <p>© 2026 Kernwise · Demo</p>
+    <a href="index.html">← Back to home</a>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
